@@ -47,9 +47,9 @@ def main(files, n, c):
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser("Displays the top n lines of text")
-    parser.add_argument('-n')
-    parser.add_argument('-c')
-    parser.add_argument('files', nargs="+")
+    parser.add_argument('-n', help="Displays top n lines")
+    parser.add_argument('-c', help="Displays top n bytes")
+    parser.add_argument('files', nargs="*", help="List of files")
     args = parser.parse_args()
     
     main(**vars(args))
